@@ -15,3 +15,4 @@
 - [ ] DollarとFrancの重複
 - [x] ~~equalsの一般化~~
 - [ ] timesの一般化
+- [ ] 通貨の概念 
