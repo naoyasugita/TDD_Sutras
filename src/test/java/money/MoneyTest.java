@@ -67,6 +67,17 @@ public class MoneyTest {
   }
 
   @Test
+  public void testSumPlusMoney(){
+    Expression fiveBucks = Money.dollar(5);
+    Expression tenBucks = Money.franc(10);
+    Bank bank = new Bank();
+    bank.addRate("CHF", "USD", 2);
+    Expression sum = new Sum(fiveBucks, tenBucks).plus(fiveBucks);
+    Money result = bank.reduce(sum, "USD");
+    assertEquals(Money.dollar(15), result);
+  }
+
+  @Test
   public void  testIdentityRate() {
     assertEquals(1, new Bank().rate("USD", "USD"));
   }
